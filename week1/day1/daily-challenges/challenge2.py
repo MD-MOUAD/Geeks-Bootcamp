@@ -1,10 +1,10 @@
 user_word = input('Enter your word: ')
 
-seen = []
+seen = ''
 new_word = ''
-for char in user_word:
-  if char not in seen:
-    new_word += char
-    seen.append(char)
+for c in user_word:
+  if c != seen:
+    new_word += c
+    seen = c
 
 print(new_word)
