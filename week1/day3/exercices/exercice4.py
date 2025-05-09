@@ -21,13 +21,17 @@ class Zoo:
     def sort_animals(self):
         """Sort animals by first letter"""
         sorted_animals_list = sorted(self.animals)
+        self.animals = sorted_animals_list
         sorted_animals_dict = {}
 
         for animal in sorted_animals_list:
-            if animal[0] not in sorted_animals_dict:
-                sorted_animals_dict[animal[0]] = [animal]
+            if animal[0].upper() not in sorted_animals_dict:
+                sorted_animals_dict[animal[0]] = animal
             else:
-                sorted_animals_dict[animal[0]].append(animal)
+                if isinstance(sorted_animals_dict[animal[0]][0], list):
+                    sorted_animals_dict[animal[0]].append(animal)
+                else:
+                    sorted_animals_dict[animal[0]] = [sorted_animals_dict[animal[0]], animal]
         return sorted_animals_dict
 
     def get_group(self):
@@ -35,7 +39,6 @@ class Zoo:
         sorted_result = self.sort_animals()
         for key, value in sorted_result.items():
             print(f"{key}: {value}")
-
 
 # Create an object called new_york_zoo and call all the methods.
 new_york_zoo = Zoo("Wild Park")
