@@ -55,5 +55,15 @@ if __name__ == "__main__":
     print(p.get_visible_items())
     # ['y', 'z']
 
-    p.first_page().go_to_page(10)
+    p.go_to_page(7)
+    print(p.current_idx + 1)
 
+    try:
+        p.go_to_page(0)
+    except ValueError as e:
+        print(e)
+
+    p.first_page().go_to_page(2).next_page()
+
+
+        
