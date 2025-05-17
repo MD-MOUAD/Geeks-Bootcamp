@@ -1,0 +1,182 @@
+swagger: "2.0"
+info:
+  title: Restaurant Menu API
+  description: API for managing restaurant menu items
+  version: 1.0.0
+  contact:
+    email: mouadmouadkhanouch@gmail.com
+host: localhost:5000
+basePath: /
+schemes:
+  - http
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /items:
+    get:
+      summary: Get all menu items
+      description: Returns a list of all menu items in the restaurant
+      operationId: getAllItems
+      responses:
+        "200":
+          description: List of menu items
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/MenuItem"
+        "500":
+          description: Server error
+          schema:
+            $ref: "#/definitions/Error"
+    post:
+      summary: Add a new menu item
+      description: Creates a new menu item with the provided name and price
+      operationId: createItem
+      parameters:
+        - in: body
+          name: item
+          description: The menu item to add
+          required: true
+          schema:
+            $ref: "#/definitions/MenuItemInput"
+      responses:
+        "201":
+          description: Item successfully added
+          schema:
+            $ref: "#/definitions/SuccessMessage"
+        "400":
+          description: Invalid input provided
+          schema:
+            $ref: "#/definitions/Error"
+        "409":
+          description: Item with that name already exists
+          schema:
+            $ref: "#/definitions/Error"
+        "500":
+          description: Server error
+          schema:
+            $ref: "#/definitions/Error"
+  /items/{name}:
+    parameters:
+      - in: path
+        name: name
+        type: string
+        required: true
+        description: Name of the menu item
+    get:
+      summary: Get a specific menu item
+      description: Returns details of a specific menu item by name
+      operationId: getItemByName
+      responses:
+        "200":
+          description: Details of the requested menu item
+          schema:
+            $ref: "#/definitions/MenuItem"
+        "404":
+          description: Item not found
+          schema:
+            $ref: "#/definitions/Error"
+        "500":
+          description: Server error
+          schema:
+            $ref: "#/definitions/Error"
+    delete:
+      summary: Delete a menu item
+      description: Deletes a specific menu item by name
+      operationId: deleteItem
+      responses:
+        "200":
+          description: Item successfully deleted
+          schema:
+            $ref: "#/definitions/SuccessMessage"
+        "404":
+          description: Item not found
+          schema:
+            $ref: "#/definitions/Error"
+        "500":
+          description: Server error
+          schema:
+            $ref: "#/definitions/Error"
+    put:
+      summary: Update a menu item
+      description: Updates the name and/or price of an existing menu item
+      operationId: updateItem
+      parameters:
+        - in: body
+          name: item
+          description: The updated menu item details
+          required: true
+          schema:
+            $ref: "#/definitions/MenuItemUpdateInput"
+      responses:
+        "200":
+          description: Item successfully updated
+          schema:
+            $ref: "#/definitions/SuccessMessage"
+        "400":
+          description: Invalid input provided
+          schema:
+            $ref: "#/definitions/Error"
+        "404":
+          description: Item not found
+          schema:
+            $ref: "#/definitions/Error"
+        "409":
+          description: Item with that new name already exists
+          schema:
+            $ref: "#/definitions/Error"
+        "500":
+          description: Server error
+          schema:
+            $ref: "#/definitions/Error"
+definitions:
+  MenuItem:
+    type: object
+    properties:
+      name:
+        type: string
+        example: "Hamburger"
+      price:
+        type: integer
+        example: 1099
+    required:
+      - name
+      - price
+  MenuItemInput:
+    type: object
+    properties:
+      name:
+        type: string
+        example: "Hamburger"
+      price:
+        type: integer
+        example: 1099
+    required:
+      - name
+      - price
+  MenuItemUpdateInput:
+    type: object
+    properties:
+      new_name:
+        type: string
+        example: "Cheeseburger"
+      new_price:
+        type: integer
+        example: 1299
+    required:
+      - new_name
+      - new_price
+  Error:
+    type: object
+    properties:
+      error:
+        type: string
+        example: "Item not found"
+  SuccessMessage:
+    type: object
+    properties:
+      message:
+        type: string
+        example: "Item added"

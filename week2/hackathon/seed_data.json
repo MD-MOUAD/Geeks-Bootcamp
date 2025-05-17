@@ -1,0 +1,22 @@
+[
+  { "name": "Burger", "price": 35 },
+  { "name": "Pizza", "price": 45 },
+  { "name": "Pasta", "price": 40 },
+  { "name": "Salad", "price": 25 },
+  { "name": "Soda", "price": 10 },
+  { "name": "Fries", "price": 15 },
+  { "name": "Grilled Chicken", "price": 55 },
+  { "name": "Fish & Chips", "price": 50 },
+  { "name": "Cheesecake", "price": 30 },
+  { "name": "Iced Tea", "price": 12 },
+  { "name": "Lemonade", "price": 14 },
+  { "name": "Steak", "price": 70 },
+  { "name": "Tacos", "price": 35 },
+  { "name": "Chicken Wrap", "price": 33 },
+  { "name": "Mushroom Soup", "price": 22 },
+  { "name": "Garlic Bread", "price": 18 },
+  { "name": "Smoothie", "price": 20 },
+  { "name": "Hot Chocolate", "price": 16 },
+  { "name": "Pancakes", "price": 28 },
+  { "name": "Waffles", "price": 29 }
+]
