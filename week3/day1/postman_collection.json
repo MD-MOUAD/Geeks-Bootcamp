@@ -1,0 +1,96 @@
+{
+  "info": {
+    "name": "Restaurant Menu API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get All Menu Items",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/items",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["items"]
+        }
+      }
+    },
+    {
+      "name": "Get Menu Item By Name",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/items/Pizza",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["items", "Pizza"]
+        }
+      }
+    },
+    {
+      "name": "Add New Menu Item",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Shawarma\",\n  \"price\": 38\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/items",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["items"]
+        }
+      }
+    },
+    {
+      "name": "Update Menu Item",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"new_name\": \"Spicy Shawarma\",\n  \"new_price\": 40\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/items/Shawarma",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["items", "Shawarma"]
+        }
+      }
+    },
+    {
+      "name": "Delete Menu Item",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/items/Shawarma",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["items", "Shawarma"]
+        }
+      }
+    }
+  ]
+}
