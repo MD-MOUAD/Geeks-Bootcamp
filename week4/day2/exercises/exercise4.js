@@ -1,13 +1,27 @@
-// 🌟 Exercise 1 : Colors
+// 🌟 Exercise 4 : Employees
+// 1
+const users = [
+  { firstName: "Bradley", lastName: "Bouley", role: "Full Stack Resident" },
+  { firstName: "Chloe", lastName: "Alnaji", role: "Full Stack Resident" },
+  { firstName: "Jonathan", lastName: "Baughn", role: "Enterprise Instructor" },
+  { firstName: "Michael", lastName: "Herman", role: "Lead Instructor" },
+  { firstName: "Robert", lastName: "Hajek", role: "Full Stack Resident" },
+  { firstName: "Wes", lastName: "Reid", role: "Instructor" },
+  { firstName: "Zach", lastName: "Klabunde", role: "Instructor" },
+];
 
-const colors = ["Blue", "Green", "Red", "Orange", "Violet", "Indigo", "Yellow"];
+const welcomeStudents = users.map((user) => `Hello ${user.firstName}`);
+console.log(welcomeStudents);
 
-colors.forEach((color, index) => {
-  console.log(`${index + 1}# choice is ${color}.`);
-});
+// 2
+const fullStackResidents = users.filter(
+  (user) => user.role === "Full Stack Resident"
+);
+console.log(fullStackResidents);
 
-if (colors.includes("Violet")) {
-  console.log("Yeah");
-} else {
-  console.log("No...");
-}
+// 3 Bonus
+const residentLastNames = users
+  .filter((user) => user.role === "Full Stack Resident")
+  .map((user) => user.lastName);
+
+console.log(residentLastNames);
