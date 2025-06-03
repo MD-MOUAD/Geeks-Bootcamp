@@ -1,4 +1,3 @@
-// Car inventory array
 const inventory = [
   { id: 1, car_make: "Lincoln", car_model: "Navigator", car_year: 2009 },
   { id: 2, car_make: "Mazda", car_model: "Miata MX-5", car_year: 2001 },
@@ -12,7 +11,7 @@ const inventory = [
   { id: 5, car_make: "Honda", car_model: "Accord", car_year: 1995 },
 ];
 
-// Part I: getCarHonda
+// Part I:
 function getCarHonda(carInventory) {
   const firstHonda = carInventory.find((car) => car.car_make === "Honda");
   if (firstHonda) {
@@ -22,11 +21,11 @@ function getCarHonda(carInventory) {
   }
 }
 
-console.log(getCarHonda(inventory));
+// console.log(getCarHonda(inventory));
 
-// Part II: sortCarInventoryByYear
+// Part II:
 function sortCarInventoryByYear(carInventory) {
   return carInventory.slice().sort((a, b) => a.car_year - b.car_year);
 }
 
-console.log(sortCarInventoryByYear(inventory));
+// console.log(sortCarInventoryByYear(inventory));
