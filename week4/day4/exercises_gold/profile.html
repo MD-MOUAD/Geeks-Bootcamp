@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Profile</title>
+  </head>
+  <body>
+    <h1>Profile Page</h1>
+    <section id="data-section"></section>
+
+    <script>
+      const searchParams = new URLSearchParams(window.location.search);
+      const name = searchParams.get("name");
+      const lastname = searchParams.get("lastname");
+      // console.log({ name, lastname });
+      const dataSection = document.getElementById("data-section");
+      dataSection.innerHTML =
+        name && lastname
+          ? `<p>Welcome ${name} ${lastname}</p>`
+          : `<p>can't get user data</p>`;
+    </script>
+  </body>
+</html>
