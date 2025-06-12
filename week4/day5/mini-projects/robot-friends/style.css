@@ -1,0 +1,126 @@
+@import url("https://fonts.cdnfonts.com/css/sega-logo-font");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  height: 80px;
+  background: #6adf82;
+  padding: 16px 30px;
+  background-image: url("./nav-bg-screenshot.png");
+  background-repeat: repeat-x;
+  background-position: top;
+}
+
+.heading {
+  font-family: "SEGA LOGO FONT", sans-serif;
+  color: #303853;
+  font-weight: 100;
+  font-size: 2rem;
+}
+
+main {
+  min-height: 100vh;
+  background-image: url("./main-background.png");
+  background-color: #6456cc;
+}
+
+#search {
+  margin: 20px;
+  padding: 10px 15px;
+  font-size: 1em;
+  width: 300px;
+  flex: 1;
+  max-width: 800px;
+  background-color: #c8d6e5;
+  border: #8caef0 solid 1px;
+  outline-width: 0px;
+}
+
+#robot-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  max-width: fit-content;
+  margin: auto;
+  gap: 20px;
+  padding: 80px 0;
+}
+
+.card {
+  background: #4ec0c5;
+  background-image: url("./robot-card-bg.png");
+  border-radius: 10px;
+  width: 350px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  color: #303853;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 50%;
+  background-color: #303853;
+}
+
+.card h2 {
+  margin: 10px 0 5px;
+  font-size: 1.5em;
+  font-weight: 900;
+}
+
+.card p {
+  margin-bottom: 35px;
+  font-size: 0.9em;
+}
+
+.no-data-found {
+  font-size: 2rem;
+  color: white;
+}
+
+@media (max-width: 1600px) {
+  #robot-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 1200px) {
+  #robot-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    gap: 5px;
+  }
+
+  #robot-container {
+    grid-template-columns: 1fr;
+  }
+
+  .heading {
+    font-size: 1.5rem;
+  }
+
+  #search {
+    width: 90%;
+  }
+}
