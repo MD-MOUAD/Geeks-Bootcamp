@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sunrise Comparison</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>Sunrise Time Comparison</h1>
+
+    <div class="preset-buttons">
+      <button
+        class="preset-btn"
+        data-city1="Paris"
+        data-lat1="48.864716"
+        data-lng1="2.349014"
+        data-city2="New York"
+        data-lat2="40.730610"
+        data-lng2="-73.935242"
+      >
+        Load Paris vs New York
+      </button>
+      <button
+        class="preset-btn"
+        data-city1="London"
+        data-lat1="51.5074"
+        data-lng1="-0.1278"
+        data-city2="Tokyo"
+        data-lat2="35.6762"
+        data-lng2="139.6503"
+      >
+        Load London vs Tokyo
+      </button>
+    </div>
+
+    <form id="sunrise-form">
+      <div class="city-container">
+        <div class="city-inputs">
+          <h3>City 1</h3>
+          <div class="form-group">
+            <label for="city1-name">City Name:</label>
+            <input type="text" id="city1-name" placeholder="e.g., Paris" />
+          </div>
+          <div class="form-group">
+            <label for="city1-lat">Latitude:</label>
+            <input
+              type="number"
+              id="city1-lat"
+              step="0.000001"
+              placeholder="e.g., 48.864716"
+            />
+          </div>
+          <div class="form-group">
+            <label for="city1-lng">Longitude:</label>
+            <input
+              type="number"
+              id="city1-lng"
+              step="0.000001"
+              placeholder="e.g., 2.349014"
+            />
+          </div>
+        </div>
+
+        <div class="city-inputs">
+          <h3>City 2</h3>
+          <div class="form-group">
+            <label for="city2-name">City Name:</label>
+            <input type="text" id="city2-name" placeholder="e.g., New York" />
+          </div>
+          <div class="form-group">
+            <label for="city2-lat">Latitude:</label>
+            <input
+              type="number"
+              id="city2-lat"
+              step="0.000001"
+              placeholder="e.g., 40.730610"
+            />
+          </div>
+          <div class="form-group">
+            <label for="city2-lng">Longitude:</label>
+            <input
+              type="number"
+              id="city2-lng"
+              step="0.000001"
+              placeholder="e.g., -73.935242"
+            />
+          </div>
+        </div>
+      </div>
+
+      <button type="submit">Compare Sunrise Times</button>
+    </form>
+
+    <div id="results">
+      <h2>Sunrise Comparison Results</h2>
+      <div id="city1-result" class="result-item"></div>
+      <div id="city2-result" class="result-item"></div>
+      <div id="comparison-result" class="result-item"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

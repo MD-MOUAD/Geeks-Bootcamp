@@ -1,0 +1,64 @@
+body {
+  font-family: Arial, sans-serif;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.form-group {
+  margin-bottom: 15px;
+}
+.city-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.city-inputs {
+  width: 48%;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+input {
+  width: 90%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+button {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+button:hover {
+  background-color: #45a049;
+}
+#results {
+  margin-top: 30px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  display: none;
+}
+.result-item {
+  margin-bottom: 15px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+}
+.preset-buttons {
+  margin: 20px 0;
+}
+.preset-btn {
+  background-color: #2196f3;
+  margin-right: 10px;
+}
