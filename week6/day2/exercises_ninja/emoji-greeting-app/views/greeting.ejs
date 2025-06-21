@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Greeting</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        text-align: center;
+      }
+      .greeting {
+        font-size: 24px;
+        margin: 20px 0;
+      }
+      .emoji {
+        font-size: 48px;
+      }
+      a {
+        color: #4caf50;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="greeting">Hello, <strong><%= name %></strong>!</div>
+    <div class="emoji"><%= emoji %></div>
+    <p><a href="/">Go back</a></p>
+  </body>
+</html>

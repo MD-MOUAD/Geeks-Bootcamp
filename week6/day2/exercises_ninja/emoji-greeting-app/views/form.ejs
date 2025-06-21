@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Emoji Greeting Form</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        text-align: center;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      input,
+      select,
+      button {
+        padding: 10px;
+        font-size: 16px;
+      }
+      button {
+        background: #4caf50;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome! Choose an Emoji</h1>
+    <form action="/greet" method="POST">
+      <input type="text" name="name" placeholder="Enter your name" required />
+      <select name="emoji" required>
+        <% emojis.forEach(emoji => { %>
+        <option value="<%= emoji %>"><%= emoji %></option>
+        <% }); %>
+      </select>
+      <button type="submit">Greet Me!</button>
+    </form>
+  </body>
+</html>
