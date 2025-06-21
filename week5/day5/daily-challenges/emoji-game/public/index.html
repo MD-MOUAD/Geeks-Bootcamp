@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Emoji Guessing Game</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="game-container">
+      <h1>Emoji Guessing Game</h1>
+      <div class="game-area">
+        <div id="emoji-display" class="emoji"></div>
+        <div id="options-container" class="options"></div>
+        <div id="feedback" class="feedback"></div>
+        <div class="score-container">
+          <span>Score: <span id="score">0</span></span>
+          <span id="timer" class="hide"
+            >Time: <span id="time-left">10</span>s</span
+          >
+        </div>
+        <button id="next-btn" class="btn hide">Next Emoji</button>
+      </div>
+      <div id="game-over" class="hide">
+        <h2>Game Over!</h2>
+        <p>Your final score: <span id="final-score">0</span></p>
+        <input type="text" id="player-name" placeholder="Enter your name" />
+        <button id="save-score" class="btn">Save Score</button>
+      </div>
+      <div class="leaderboard">
+        <h2>Leaderboard</h2>
+        <div id="leaderboard-list"></div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
