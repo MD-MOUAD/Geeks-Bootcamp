@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Quiz Results</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        text-align: center;
+      }
+      .score {
+        font-size: 32px;
+        margin: 20px 0;
+      }
+      .percentage {
+        font-size: 24px;
+        color: #4caf50;
+      }
+      button {
+        padding: 10px;
+        background: #4caf50;
+        color: white;
+        border: none;
+        cursor: pointer;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Quiz Complete!</h1>
+    <div class="score">
+      You scored <strong><%= score %></strong> out of <%= totalQuestions %>
+    </div>
+    <div class="percentage">
+      (<%= Math.round((score / totalQuestions) * 100) %>%)
+    </div>
+    <a href="/quiz"><button>Play Again</button></a>
+  </body>
+</html>

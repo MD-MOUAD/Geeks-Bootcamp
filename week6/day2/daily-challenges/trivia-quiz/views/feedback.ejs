@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Feedback</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        text-align: center;
+      }
+      .feedback {
+        font-size: 24px;
+        color: <%= isCorrect ? 'green' : 'red' %>;
+        margin: 20px 0;
+      }
+      .correct-answer {
+        font-style: italic;
+        color: #666;
+      }
+      button {
+        padding: 10px;
+        background: #4CAF50;
+        color: white;
+        border: none;
+        cursor: pointer;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="feedback">
+      <%= isCorrect ? '✅ Correct!' : '❌ Incorrect!' %>
+    </div>
+    <% if (!isCorrect) { %>
+    <div class="correct-answer">
+      The correct answer was: <strong><%= correctAnswer %></strong>
+    </div>
+    <% } %> <% if (nextQuestion) { %>
+    <a href="/quiz"><button>Next Question →</button></a>
+    <% } else { %>
+    <a href="/quiz/score"><button>See Final Score</button></a>
+    <% } %>
+  </body>
+</html>
