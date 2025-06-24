@@ -1,0 +1,78 @@
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background-color: #f0f2f5;
+}
+
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.card {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 420px;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.language-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.language-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 0.75rem;
+  background-color: #fafafa;
+  transition: background-color 0.2s;
+}
+
+.language-item:hover {
+  background-color: #f3f4f6;
+}
+
+.language-name {
+  font-weight: 500;
+  color: #333;
+  width: 50px;
+}
+
+.vote-count {
+  font-weight: 500;
+  color: orange;
+  margin: 0 1rem;
+}
+
+.vote-button {
+  padding: 0.4rem 0.8rem;
+  background-color: orange;
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.vote-button:hover {
+  background-color: #0056b3;
+}
